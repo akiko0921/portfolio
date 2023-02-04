@@ -54,6 +54,12 @@
                 <form
                     action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdh6K0KviPw8irY15_s8Go8Q8bQk1umIPYRl6hvd1JVRnPV-A/formResponse"
                     method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                    <script>
+                        var submitted = false;
+                    </script>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"
+                        onload="if(submitted){window.location='thanks.html';}"></iframe>
+
                     <h2 class="item_logo">
                         <img src="image/contact@2x.png" alt="contact">
                     </h2>
@@ -117,15 +123,10 @@
                 <a href="#header"><img src="image/top@2x.png" alt="topへ"></a>
             </div>
         </footer>
-
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
-            onload="if(submitted){window.location='thanks.html';}"></iframe>
-
     </div>
+
     <script src="../js/script.js"> </script>
-    <script>
-        var submitted = false;
-    </script>
+
 </body>
 
 </html>

@@ -277,6 +277,20 @@
     border: 1px solid #ddd;
 }
 
+.triangle {
+    width: 10px;
+    height: 10px;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    background-color: #515151;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.cafe_access_item {
+    display: flex;
+    align-items: center;
+}
+
 .works_subtitle_sp,
 .works_title_sp,
 .works_img_sp {
