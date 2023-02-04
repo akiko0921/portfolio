@@ -1,0 +1,302 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #515151;
+    font-weight: 400;
+    font-feature-settings: "palt";
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+    display: block;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+body {
+    background-image: url(../image/back@2x.png);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-attachment: fixed;
+}
+
+.wrapper {
+    display: none;
+}
+
+/* ヘッダーnav */
+
+.header_wrap {
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pc_nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pc_nav ul li {
+    font-size: 16px;
+}
+
+.pc_nav ul li + li {
+    margin-left: 50px;
+}
+
+.header_logo {
+    width: 200px;
+}
+
+/* メイン */
+
+main {
+    margin: 0 auto;
+}
+
+.main_container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+
+.item_logo {
+    padding: 90px 0 70px 0;
+    text-align: center;
+    height: 66px;
+}
+
+/* フッター */
+
+footer {
+    background-image: url(../image/footerbg@2x.png);
+    background-repeat: repeat;
+}
+
+.footer_wrap {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 10px 40px 10px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.footer_logo {
+    max-width: 200px;
+}
+
+.footer_logos {
+    text-align: right;
+}
+
+.footer_nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.footer_nav ul li + li {
+    margin-left: 50px;
+}
+
+.top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 80px;
+}
+
+.small {
+    font-size: 13px;
+    padding-top: 7px;
+}
+
+.sp_nav,
+.sp_btn {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .pc_nav {
+        display: none;
+    }
+
+    /* ハンバーガー */
+    .sp_btn {
+        position: absolute;
+        top: 55px;
+        right: 25px;
+        display: block;
+        height: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .sp_btn span,
+    .sp_btn span::before,
+    .sp_btn span::after {
+        display: block;
+        width: 32px;
+        height: 2px;
+        border-radius: 2px;
+        background: #515151;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: "";
+        position: absolute;
+    }
+
+    .sp_btn span {
+        position: relative;
+        top: 10px;
+    }
+
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* ハンバーガー閉じる */
+
+    .sp_btn.open span {
+        background: transparent;
+    }
+
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        background: #efefef;
+    }
+
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+        background: #efefef;
+    }
+
+    /* ハンバーガーメニュー */
+
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #6b6866;
+        opacity: 0.9;
+        z-index: 1;
+    }
+
+    .sp_nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .sp_nav ul li {
+        padding: 20px 0;
+        color: #efefef;
+        font-size: 16px;
+    }
+
+    /* フッター */
+
+    .footer_wrap {
+        padding: 20px;
+    }
+
+    .footer_logo {
+        max-width: 116px;
+    }
+
+    .footer_logos {
+        margin: 0 auto;
+    }
+
+    .footer_nav ul li {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sp_btn {
+        top: 38px;
+    }
+
+    .header_logo {
+        width: 116px;
+    }
+
+    .main_container {
+        padding: 0px 20px;
+    }
+
+    .item_logo {
+        padding: 75px 0 45px 0;
+        height: 55px;
+    }
+
+    /* フッター */
+
+    .top {
+        width: 56px;
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+    }
+}

@@ -1,0 +1,548 @@
+@charset "utf-8";
+
+/* ファーストアニメーション */
+
+.fv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fv::before,
+.fv::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 10px;
+    background-color: #9f282c;
+    transition: 3s;
+    transition-delay: 0.5s;
+}
+
+.fv::before {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.fv::after {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.fv.is_active::before {
+    transform: translate(0);
+}
+
+.fv.fv.is_active::after {
+    transform: translate(0);
+}
+
+.mizu {
+    width: 13%;
+    animation: mizu_anime 2.5s ease-in-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes mizu_anime {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+/* メインビジュアル */
+
+.main_visual {
+    position: relative;
+    height: calc(100vh - 210px);
+}
+
+.main {
+    width: 50%;
+}
+
+.main_top {
+    position: absolute;
+    right: 0;
+}
+
+.main_bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.main_visual p {
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif;
+}
+
+.visual_p1 p {
+    position: absolute;
+    top: 15%;
+    left: 13%;
+}
+
+.mizuhiki {
+    position: absolute;
+    top: 40%;
+}
+
+.visual_p2 p {
+    position: absolute;
+    top: 65%;
+    right: 13%;
+}
+
+.visual p {
+    font-size: 20px;
+    line-height: 2.4;
+    letter-spacing: 0.2em;
+}
+
+/* スクロール */
+
+.scroll {
+    text-align: center;
+    margin-top: -50px;
+    position: relative;
+}
+
+.scroll p {
+    padding: 15px 0;
+}
+
+.scroll_dot {
+    height: 64px;
+}
+
+.scroll_arrow {
+    position: relative;
+}
+
+.scroll_arrow {
+    position: absolute;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-right: solid 1px #515151;
+    border-bottom: solid 1px #515151;
+    transform: translate(-50%, -50%) rotate(45deg);
+    margin: 0 auto;
+    animation: slideBlink 2s linear infinite;
+}
+
+@keyframes slideBlink {
+    from {
+        opacity: 0;
+        top: 100px;
+    }
+    to {
+        opacity: 1;
+        top: 120px;
+    }
+}
+
+/* ワークス */
+
+.slider_area {
+    padding: 0 7%;
+}
+
+.works_slider img {
+    margin: 0 auto;
+    width: auto;
+    height: 30vw;
+    max-height: 470px;
+}
+
+.works_slider .slick-slide {
+    opacity: 0.5;
+    transform: scale(0.8);
+    transition: opacity 0.5s, transform 0.5s;
+    /* margin: 0 10px; */
+}
+
+.works_slider .slick-current,
+.works_slider .is-active-next {
+    opacity: 1;
+    transform: scale(1);
+    padding-bottom: 30px;
+}
+
+.slick-dots li button:before {
+    color: #515151;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #515151;
+}
+
+.slick-next:before {
+    display: none;
+}
+
+.slick-prev:before {
+    display: none;
+}
+
+.slick-arrow {
+    width: 24px;
+    height: 24px;
+    border-top: 1px solid #515151;
+    border-right: 1px solid #515151;
+    top: 45%;
+}
+
+.slick-next {
+    transform: rotate(45deg);
+    right: -5%;
+}
+
+.slick-prev {
+    transform: rotate(-135deg);
+    left: -5%;
+    z-index: 100;
+}
+
+.view_more {
+    position: relative;
+    max-width: 160px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.view_more p {
+    position: absolute;
+    top: 58px;
+    font-size: 16px;
+    left: 28px;
+    letter-spacing: 0.2em;
+}
+
+.right_arrow {
+    width: 6px;
+    height: 6px;
+    border-right: solid 1px #515151;
+    border-top: solid 1px #515151;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 65px;
+    right: 16px;
+}
+
+/* アバウト */
+
+.about {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about_img {
+    max-width: 300px;
+    padding-left: 8%;
+}
+
+.about_sentence {
+    width: 50%;
+}
+
+.name p {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 48px 0 24px 0;
+}
+
+.about_word p {
+    line-height: 2.25;
+    text-align: justify;
+}
+
+/* サービス */
+
+.service {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service_title p {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.code,
+.design {
+    max-width: 40%;
+}
+
+.service_img {
+    height: 120px;
+    text-align: center;
+    padding: 47px 0;
+}
+
+.service_p p {
+    line-height: 2;
+    letter-spacing: 0.05em;
+    text-align: justify;
+}
+
+.icon {
+    padding-top: 45px;
+    text-align: center;
+}
+
+.icon img + img {
+    margin-left: 48px;
+}
+
+.service_icon {
+    height: 48px;
+}
+
+.code_icon {
+    height: 56px;
+}
+
+/* モチーフ */
+
+.motif {
+    display: flex;
+    justify-content: space-between;
+}
+
+.motif_logo {
+    width: 13%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.motif_sen {
+    width: 70.9%;
+}
+
+.motif_name p {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.motif_word p {
+    line-height: 2.25;
+    text-align: justify;
+}
+
+/* デイリー */
+
+.daily img {
+    padding: 0 10px;
+}
+
+.daily {
+    padding-bottom: 80px;
+}
+
+.aboutsp_img {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        width: 64%;
+    }
+
+    .main_visual p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .visual_p1 p {
+        top: 21%;
+        left: 0;
+    }
+
+    .mizuhiki {
+        top: 40%;
+    }
+
+    .visual_p2 p {
+        top: 52%;
+        left: 0;
+    }
+
+    .visual p {
+        font-size: 16px;
+        line-height: 2.25;
+        letter-spacing: 0.1em;
+    }
+
+    /* スクロール */
+
+    .scroll p {
+        padding: 12px 0;
+        font-size: 13px;
+    }
+
+    .scroll_dot {
+        height: 64px;
+    }
+
+    .scroll_arrow {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* ワークス */
+
+    .slick-arrow {
+        width: 16px;
+        height: 16px;
+    }
+
+    .view_more {
+        max-width: 120px;
+        padding-top: 40px;
+    }
+
+    .view_more p {
+        top: 54px;
+        font-size: 12px;
+        left: 25px;
+    }
+
+    .right_arrow {
+        top: 59px;
+        right: 12px;
+        width: 4px;
+        height: 4px;
+    }
+
+    /* アバウト */
+
+    .about,
+    .aboutsp_img {
+        display: block;
+    }
+
+    .aboutsp_img {
+        text-align: center;
+    }
+
+    .about_img {
+        display: none;
+    }
+
+    .about_sentence {
+        width: 100%;
+    }
+
+    /* サービス */
+
+    .service {
+        display: block;
+    }
+
+    .code,
+    .design {
+        max-width: 100%;
+    }
+
+    .service_img {
+        height: 100px;
+        padding: 40px 0;
+    }
+
+    .icon img + img {
+        margin-left: 15%;
+    }
+
+    .service_icon {
+        height: 40px;
+        padding: 28px 0 56px 0;
+    }
+
+    .code_icon {
+        height: 50px;
+        padding: 28px 0 0 0;
+    }
+
+    /* モチーフ */
+
+    .motif {
+        display: block;
+    }
+
+    .motif_logo {
+        width: 100px;
+        padding-bottom: 40px;
+    }
+
+    .motif_sen {
+        width: 100%;
+    }
+
+    /* デイリー */
+
+    .daily img {
+        padding: 0 4px;
+    }
+
+    .daily {
+        padding-bottom: 40px;
+    }
+
+    .fv::before,
+    .fv::after {
+        height: 4px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .sp_br {
+        display: none;
+    }
+}
+
+.element {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.is-fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.underline {
+    display: inline-block;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.underline::after {
+    background-color: #9e9e9d;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: 0.5s all;
+    width: 0;
+}
+
+.underline:hover::after {
+    width: 100%;
+}
