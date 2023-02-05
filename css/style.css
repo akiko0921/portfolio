@@ -388,6 +388,10 @@
 
     /* スクロール */
 
+    .scroll {
+        margin-top: -20px;
+    }
+
     .scroll p {
         padding: 12px 0;
         font-size: 13px;
