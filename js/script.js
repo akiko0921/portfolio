@@ -116,7 +116,7 @@ $(window).scroll(function () {
     const windowHeight = $(window).height();
     const scroll = $(window).scrollTop();
 
-    $(".js_fadein").each(function () {
+    $(".js-fadein").each(function () {
         const targetPosition = $(this).offset().top;
         if (scroll > targetPosition - windowHeight + 100) {
             $(this).addClass("is-fadein");
