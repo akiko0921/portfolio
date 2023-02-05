@@ -366,6 +366,10 @@
         width: 100%;
     }
 
+    .main_visual {
+        height: calc(100vh - 185px);
+    }
+
     .visual_p1 p {
         top: 21%;
         left: 0;
