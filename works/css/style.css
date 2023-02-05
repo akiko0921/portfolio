@@ -391,7 +391,7 @@
     }
 }
 
-.element {
+.js_fadein {
     opacity: 0;
     visibility: hidden;
     transform: translateY(30px);
