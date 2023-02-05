@@ -275,11 +275,15 @@ footer {
 
 @media screen and (max-width: 767px) {
     .sp_btn {
-        top: 38px;
+        top: 31px;
     }
 
     .header_logo {
         width: 116px;
+    }
+
+    .header_wrap {
+        padding: 20px 5%;
     }
 
     .main_container {
