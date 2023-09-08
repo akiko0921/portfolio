@@ -175,6 +175,10 @@
     top: 50%;
 }
 
+.rihabiriya:after {
+    content: "マッサージ治療院サイト";
+}
+
 .pf:after {
     content: "ポートフォリオサイト";
 }
